@@ -10,7 +10,9 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        {% block page_top %}{% endblock %}
         {% block body %}{% endblock %}
+        {% block page_bottom %}{% endblock %}
         {% block scripts %}
             <script src="{{ asset('/assets/js/script.js') }}"></script>
         {% endblock %}
