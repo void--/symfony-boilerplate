@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.header__logo {
+  margin-right: auto;
+}
+
+.header__menu {
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    padding: 5px 10px;
+  }
+}
