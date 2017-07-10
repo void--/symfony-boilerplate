@@ -1,0 +1,14 @@
+@import 'mq';
+@import 'susy';
+
+$mq-breakpoints: (
+        mobile:  320px,
+        tablet:  740px,
+        desktop: 940px,
+        wide:    1300px
+);
+
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 10px,
+);

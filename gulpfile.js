@@ -22,7 +22,10 @@ var config = {
     src: 'app/Resources/assets/scss/**/*.scss',
     dest: 'web/assets/css',
     sourceMapDest: '.',
-    includePaths: []
+    includePaths: [
+      'node_modules/sass-mq',
+      'node_modules/susy/sass'
+    ]
   },
   js: {
     src: 'app/Resources/assets/js/**/*.js',
@@ -33,28 +36,23 @@ var config = {
   browserSyncProxy: 'http://127.0.0.1:8000'
 };
 
-function errorHandler(error, title) {
+var onError = function(err) {
   notify.onError({
-    title: title,
-    subtitle: "Failure",
-    message: "Error: " + error.message,
-    sound: "Beep"
-  })(error);
+    title:    "Gulp",
+    subtitle: "Failure!",
+    message:  "Error: <%= error.message %>",
+    sound:    "Beep"
+  })(err);
   this.emit('end');
-}
+};
 
 gulp.task('css', function() {
   return gulp.src(config.css.src)
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(glob())
-    .pipe(plumber({
-      errorHandler: function(error) {
-        errorHandler(error, 'CSS');
-      }
-    }))
     .pipe(sourcemaps.init())
     .pipe(sass({
       style: 'compressed',
-      errLogToConsole: true,
       includePaths: config.css.includePaths
     }))
     .pipe(cleanCss({compatibility: 'ie8'}))
@@ -65,13 +63,9 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   return gulp.src(config.js.src)
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(sourcemaps.init())
     .pipe(concat(config.js.fileName))
-    .pipe(plumber({
-      errorHandler: function(error) {
-        errorHandler(error, 'JS');
-      }
-    }))
     .pipe(uglify())
     .pipe(sourcemaps.write(config.js.sourceMapDest))
     .pipe(gulp.dest(config.js.dest));
