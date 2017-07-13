@@ -10,6 +10,7 @@ Includes:
   - KnpMenuBundle
   - FOSUserBundle
   - EasyAdminBundle
+  - IvoryCKEditorBundle
   - DoctrineMigrationsBundle
 
 ### Getting started
