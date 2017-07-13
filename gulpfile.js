@@ -24,7 +24,8 @@ var config = {
     sourceMapDest: '.',
     includePaths: [
       'node_modules/sass-mq',
-      'node_modules/susy/sass'
+      'node_modules/susy/sass',
+      'node_modules/normalize-scss/sass'
     ]
   },
   js: {

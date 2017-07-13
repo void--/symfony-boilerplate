@@ -17,6 +17,7 @@ class AppKernel extends Kernel {
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
 
             new AppBundle\AppBundle(),
         ];

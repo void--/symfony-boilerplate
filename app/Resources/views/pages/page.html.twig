@@ -2,6 +2,16 @@
 
 {% block page_top %}
     {{ include('components/header.html.twig') }}
+
+    {% if app.request.hasPreviousSession %}
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
 {% endblock %}
 
 {% block page_bottom %}
