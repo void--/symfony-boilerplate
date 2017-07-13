@@ -29,6 +29,11 @@ class BlogPost
     private $slug;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $title;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="body", type="text")
@@ -93,5 +98,21 @@ class BlogPost
     {
         return $this->body;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle() {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+
 }
 
