@@ -7,7 +7,10 @@ Includes:
   - sass and js bundling with gulp
   - browser reloading with browserSync
   - sass-mq and susy
-  - knp menu bundle
+  - KnpMenuBundle
+  - FOSUserBundle
+  - EasyAdminBundle
+  - DoctrineMigrationsBundle
 
 ### Getting started
 - clone this repo, run `composer install` and `npm install`

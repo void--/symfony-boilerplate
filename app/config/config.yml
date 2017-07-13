@@ -78,4 +78,11 @@ fos_user:
 
 easy_admin:
     entities:
-        - AppBundle\Entity\User
+        User:
+            class: AppBundle\Entity\User
+        BlogPost:
+            class: AppBundle\Entity\BlogPost
+            list:
+                fields:
+                    - slug
+                    - body
