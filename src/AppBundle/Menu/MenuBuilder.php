@@ -6,26 +6,26 @@ use Knp\Menu\FactoryInterface;
 
 class MenuBuilder {
 
-  private $factory;
+    private $factory;
 
-  public function __construct(FactoryInterface $factory) {
-    $this->factory = $factory;
-  }
+    public function __construct(FactoryInterface $factory) {
+        $this->factory = $factory;
+    }
 
-  public function createMainMenu(array $options) {
-    $menu = $this->factory->createItem('main');
+    public function createMainMenu(array $options) {
+        $menu = $this->factory->createItem('main');
 
-    $menu->addChild('Home', ['route' => 'homepage']);
-    $menu->addChild('About', ['route' => 'about']);
+        $menu->addChild('Home', ['route' => 'homepage']);
+        $menu->addChild('About', ['route' => 'about']);
 
-    return $menu;
-  }
+        return $menu;
+    }
 
-  public function createFooterMenu(array $options) {
-    $menu = $this->factory->createItem('footer');
+    public function createFooterMenu(array $options) {
+        $menu = $this->factory->createItem('footer');
 
-    $menu->addChild('Home', ['route' => 'homepage']);
+        $menu->addChild('Home', ['route' => 'homepage']);
 
-    return $menu;
-  }
+        return $menu;
+    }
 }

@@ -34,10 +34,11 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    app.menu_builder:
-      class: AppBundle\Menu\MenuBuilder
+    Knp\Menu\FactoryInterface:
+        alias: knp_menu.factory
+
+    AppBundle\Menu\MenuBuilder:
       public: true
-      arguments: ['@knp_menu.factory']
       tags:
         - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
         - { name: knp_menu.menu_builder, method: createFooterMenu, alias: footer }
