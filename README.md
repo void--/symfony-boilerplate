@@ -9,4 +9,9 @@ Includes:
   - sass-mq and susy
   - knp menu bundle
 
-To get started clone this repo, run `composer install` and `npm install`, you can then start the built in php webserver using `./console server:run`. To compile frontend assets and launch browserSync run `gulp` from the docroot.
+### Getting started
+- clone this repo, run `composer install` and `npm install`
+- add your database credentials to `app/config/parameters.yml`
+- run `./console doctrine:database:create` and `./console doctrine:schema:update --force`
+- You can then start the built in php webserver using `./console server:run`
+- To compile frontend assets and launch browserSync run `gulp` from the docroot.
