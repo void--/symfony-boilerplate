@@ -86,3 +86,7 @@ easy_admin:
                 fields:
                     - slug
                     - body
+            form:
+                fields:
+                    - { property: 'slug' }
+                    - { property: 'body', type: 'ckeditor' }
